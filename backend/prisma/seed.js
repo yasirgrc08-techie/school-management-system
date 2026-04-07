@@ -18,8 +18,8 @@ async function main() {
   // Create Admin users (2)
   const admins = await Promise.all(
     [
-      { email: 'admin@school.com', firstName: 'Admin', lastName: 'User' },
-      { email: 'admin2@school.com', firstName: 'Sarah', lastName: 'Wilson' },
+      { email: 'admin@school.com', firstName: 'Yasir', lastName: 'Sharfi' },
+      { email: 'admin2@school.com', firstName: 'Priyank', lastName: 'Vyas' },
     ].map((u) =>
       prisma.user.create({ data: { ...u, password, role: 'ADMIN' } })
     )
@@ -28,14 +28,14 @@ async function main() {
 
   // Create Teacher users (8)
   const teacherData = [
-    { email: 'teacher1@school.com', firstName: 'John', lastName: 'Smith' },
-    { email: 'teacher2@school.com', firstName: 'Emily', lastName: 'Johnson' },
-    { email: 'teacher3@school.com', firstName: 'Michael', lastName: 'Brown' },
-    { email: 'teacher4@school.com', firstName: 'Jessica', lastName: 'Davis' },
-    { email: 'teacher5@school.com', firstName: 'David', lastName: 'Martinez' },
-    { email: 'teacher6@school.com', firstName: 'Laura', lastName: 'Garcia' },
-    { email: 'teacher7@school.com', firstName: 'Robert', lastName: 'Anderson' },
-    { email: 'teacher8@school.com', firstName: 'Amanda', lastName: 'Thomas' },
+    { email: 'teacher1@school.com', firstName: 'Priyanka', lastName: 'Vyas' },
+    { email: 'teacher2@school.com', firstName: 'Anjali', lastName: 'Verma' },
+    { email: 'teacher3@school.com', firstName: 'Suresh', lastName: 'Patel' },
+    { email: 'teacher4@school.com', firstName: 'Deepika', lastName: 'Nair' },
+    { email: 'teacher5@school.com', firstName: 'Vikram', lastName: 'Singh' },
+    { email: 'teacher6@school.com', firstName: 'Kavita', lastName: 'Joshi' },
+    { email: 'teacher7@school.com', firstName: 'Rajesh', lastName: 'Gupta' },
+    { email: 'teacher8@school.com', firstName: 'Sunita', lastName: 'Reddy' },
   ];
   const teachers = await Promise.all(
     teacherData.map((u) =>
@@ -45,14 +45,14 @@ async function main() {
   console.log(`✅ Created ${teachers.length} teachers`);
 
   // Create Student users (40)
-  const firstNames = ['Alice', 'Bob', 'Charlie', 'Diana', 'Edward', 'Fiona', 'George', 'Hannah', 'Isaac', 'Julia',
-    'Kevin', 'Lily', 'Mason', 'Nina', 'Oliver', 'Penny', 'Quinn', 'Rachel', 'Samuel', 'Tina',
-    'Ulysses', 'Victoria', 'Walter', 'Xena', 'Yusuf', 'Zara', 'Aaron', 'Bella', 'Carlos', 'Debra',
-    'Ethan', 'Freya', 'Grant', 'Holly', 'Ivan', 'Jasmine', 'Kyle', 'Luna', 'Marco', 'Nora'];
-  const lastNames = ['Williams', 'Jones', 'Taylor', 'Moore', 'Jackson', 'White', 'Harris', 'Clark', 'Lewis', 'Robinson',
-    'Walker', 'Hall', 'Allen', 'Young', 'King', 'Wright', 'Lopez', 'Hill', 'Scott', 'Green',
-    'Adams', 'Baker', 'Nelson', 'Carter', 'Mitchell', 'Perez', 'Roberts', 'Turner', 'Phillips', 'Campbell',
-    'Parker', 'Evans', 'Edwards', 'Collins', 'Stewart', 'Sanchez', 'Morris', 'Rogers', 'Reed', 'Cook'];
+  const firstNames = ['Aarav', 'Aditi', 'Arjun', 'Ananya', 'Bhavesh', 'Chetna', 'Darshan', 'Diya', 'Eshan', 'Fatima',
+    'Gaurav', 'Harini', 'Ishaan', 'Jhanvi', 'Karan', 'Lavanya', 'Manish', 'Neha', 'Om', 'Pooja',
+    'Rishi', 'Sakshi', 'Tanmay', 'Uma', 'Varun', 'Wafa', 'Yash', 'Zoya', 'Aditya', 'Bhumi',
+    'Chirag', 'Divya', 'Farhan', 'Gauri', 'Harsh', 'Isha', 'Kunal', 'Meera', 'Nikhil', 'Priya'];
+  const lastNames = ['Sharma', 'Patel', 'Singh', 'Kumar', 'Gupta', 'Verma', 'Jain', 'Reddy', 'Nair', 'Pillai',
+    'Iyer', 'Bhat', 'Desai', 'Rao', 'Mishra', 'Chauhan', 'Pandey', 'Saxena', 'Agarwal', 'Tiwari',
+    'Kulkarni', 'Joshi', 'Menon', 'Kapoor', 'Malhotra', 'Chowdhury', 'Banerjee', 'Mukherjee', 'Das', 'Bose',
+    'Sinha', 'Rajan', 'Thakur', 'Chopra', 'Dhawan', 'Kohli', 'Sethi', 'Anand', 'Bajaj', 'Shetty'];
 
   const students = await Promise.all(
     firstNames.map((fn, i) =>
